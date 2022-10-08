@@ -35,9 +35,3 @@ const loopGame = () => {
 };
 
 export default loopGame;
-
-import loopGame from "./gameOfLife/loopGame.js";
-
-const initGame = loopGame();
-
-console.log(initGame);
