@@ -1,4 +1,4 @@
-import Cell from "../Cell/Cell.js";
+import Cell from "./Cell.js";
 import gameBoard from "./gameBoard.js";
 
 describe("Given the function gameBoard que genera el board", () => {
