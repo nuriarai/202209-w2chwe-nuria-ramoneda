@@ -1,4 +1,3 @@
-import Cell from "./Cell.js";
 import gameBoard from "./gameBoard.js";
 
 const boardSize = 3;
@@ -9,8 +8,6 @@ const neighboursCheck = (currentCell) => {
     for (let i = 0; i < 8; i++) {
       const neighboursBoard = gameBoard(boardSize);
     }
-
-    currentCell.nextStatus = 1;
   }
 };
 
