@@ -1,5 +1,5 @@
 import Cell from "./gameOfLife/Cell.js";
-import GameBoard from "./gameOfLife/GameBoard.js";
+import GameBoard from "./gameOfLife/gameBoard.js";
 import loopGame from "./gameOfLife/loopGame.js";
 
 const gray = new Cell(1, 2, 0);
