@@ -7,20 +7,19 @@ describe("Given the class gameBoard que genera el board", () => {
     test("Then it should return an array of 3 rows and 3 columns", () => {
       const expectedResult = gameSize;
 
-      const game = new GameBoard(gameSize, gameSize);
-      const gameBoard = game.createBoard();
+      const game = new GameBoard(gameSize, gameSize).board;
 
-      expect(game.board.length).toBe(expectedResult);
+      expect(game.length).toBe(expectedResult);
     });
 
     test("Then it should return an array of arrays with objects inside ", () => {
       const expectedResult = [
-        [new Cell(0, 0), new Cell(1, 0), new Cell(0, 0)],
-        [new Cell(0, 0), new Cell(1, 1), new Cell(0, 0)],
-        [new Cell(0, 0), new Cell(1, 0), new Cell(0, 0)],
+        [new Cell(false, false), new Cell(true, false), new Cell(false, false)],
+        [new Cell(false, false), new Cell(true, false), new Cell(false, false)],
+        [new Cell(false, false), new Cell(true, false), new Cell(false, false)],
       ];
 
-      const arraysBoard = new GameBoard(gameSize, gameSize);
+      const arraysBoard = new GameBoard(gameSize, gameSize).board;
 
       expect(arraysBoard).toStrictEqual(expectedResult);
     });
