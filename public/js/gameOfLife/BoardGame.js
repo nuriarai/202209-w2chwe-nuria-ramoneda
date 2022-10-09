@@ -1,8 +1,9 @@
 import Cell from "./Cell.js";
+import checkLifes from "./checkLifes.js";
 
 class GameBoard {
-  rows = 3;
-  columns = 3;
+  rows;
+  columns;
   board = [];
 
   constructor(rows, columns) {
@@ -43,6 +44,31 @@ class GameBoard {
       }
     }
     return boardToPrint;
+  }
+
+  loopOfLife() {
+    for (let x = 0; x < this.rows; x++) {
+      for (let y = 0; y < this.columns; y++) {
+        const currentCell = this.board[x][y];
+        const newStatus = checkLifes(
+          x,
+          y,
+          this.board[x][y].status,
+          this.board,
+          this.rows,
+          this.columns
+        );
+        currentCell.nextStatus = newStatus;
+      }
+    }
+    for (let x = 0; x < this.rows; x++) {
+      for (let y = 0; y < this.columns; y++) {
+        const currentCell = this.board[x][y];
+        currentCell.status = currentCell.nextStatus;
+        currentCell.nextStatus = false;
+      }
+    }
+    console.log(this.board);
   }
 }
 
