@@ -1,23 +1,19 @@
 import Cell from "./Cell.js";
 
 describe("Given the class Cell", () => {
-  describe("When it receives an axys x 0, axys y 1, status 1", () => {
-    test("Then it should return a new Cell instance", () => {
-      const axisX = 0;
-      const axisY = 1;
+  describe("When it receives an first value of 1 and a seconf value of 0", () => {
+    test("Then it should return a new Cell instance with the properties status = 1 and nextStatus = 0", () => {
       const status = 1;
+      const nextStatus = 0;
       const expectedResult = {
-        axisX: 0,
-        axisY: 1,
         status: 1,
-        nextStatus: undefined,
+        nextStatus: 0,
       };
 
-      const result = new Cell(axisX, axisY, status);
+      const result = new Cell(status, nextStatus);
 
-      expect(result.axisX).toBe(expectedResult.axisX);
-      expect(result.axisY).toBe(expectedResult.axisY);
       expect(result.status).toBe(expectedResult.status);
+      expect(result.nextStatus).toBe(expectedResult.nextStatus);
     });
   });
 });

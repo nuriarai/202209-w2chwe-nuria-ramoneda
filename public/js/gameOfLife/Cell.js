@@ -1,13 +1,10 @@
 class Cell {
-  axisX;
-  axisY;
-  status;
-  nextStatus;
+  status = false;
+  nextStatus = false;
 
-  constructor(axisX, axisY, status) {
-    this.axisX = axisX;
-    this.axisY = axisY;
+  constructor(status, nextStatus) {
     this.status = status;
+    this.nextStatus = nextStatus;
   }
 }
 

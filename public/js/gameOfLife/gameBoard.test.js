@@ -1,25 +1,26 @@
 import Cell from "./Cell.js";
-import gameBoard from "./gameBoard.js";
+import GameBoard from "./gameBoard.js";
 
-describe("Given the function gameBoard que genera el board", () => {
-  describe("When it recieves a value of 3 ", () => {
+describe("Given the class gameBoard que genera el board", () => {
+  describe("When it recieves 3 and 3 ", () => {
     const gameSize = 3;
-    test("Then it should return an array of 3 rows", () => {
+    test("Then it should return an array of 3 rows and 3 columns", () => {
       const expectedResult = gameSize;
 
-      const lengthBoard = gameBoard(gameSize).length;
+      const game = new GameBoard(gameSize, gameSize);
+      const gameBoard = game.createBoard();
 
-      expect(lengthBoard).toBe(expectedResult);
+      expect(game.board.length).toBe(expectedResult);
     });
 
     test("Then it should return an array of arrays with objects inside ", () => {
       const expectedResult = [
-        [new Cell(0, 0, 0), new Cell(0, 1, 1), new Cell(0, 2, 0)],
-        [new Cell(1, 0, 0), new Cell(1, 1, 1), new Cell(1, 2, 0)],
-        [new Cell(2, 0, 0), new Cell(2, 1, 1), new Cell(2, 2, 0)],
+        [new Cell(0, 0), new Cell(1, 0), new Cell(0, 0)],
+        [new Cell(0, 0), new Cell(1, 1), new Cell(0, 0)],
+        [new Cell(0, 0), new Cell(1, 0), new Cell(0, 0)],
       ];
 
-      const arraysBoard = gameBoard(gameSize);
+      const arraysBoard = new GameBoard(gameSize, gameSize);
 
       expect(arraysBoard).toStrictEqual(expectedResult);
     });
