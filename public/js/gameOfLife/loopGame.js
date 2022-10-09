@@ -1,4 +1,4 @@
-import gameBoard from "./gameBoard.js";
+import GameBoard from "./GameBoard.js";
 
 const boardSize = 3;
 
@@ -6,7 +6,7 @@ const neighboursCheck = (xx, yy, status) => {
   if (status === 0) {
     // has 3 neighbours alive
     // for (let i = 0; i < 8; i++) {
-    const neighboursBoard = gameBoard(boardSize);
+    const neighboursBoard = GameBoard(boardSize);
 
     if ((xx > 0 && xx < 3) || (yy > 0 && yy < 3)) {
       const right = neighboursBoard[xx][yy + 1];
@@ -40,9 +40,8 @@ const neighboursCheck = (xx, yy, status) => {
 };
 
 const loopGame = () => {
-  const board = gameBoard(boardSize);
-
-  console.log(board);
+  const board = new GameBoard(3, 3);
+  // console.log(board);
 };
 
 export default loopGame;

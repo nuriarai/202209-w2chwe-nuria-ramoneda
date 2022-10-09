@@ -1,21 +1,32 @@
 import Cell from "./Cell.js";
 
-const gameBoard = (boardSize) => {
-  const board = [];
+class GameBoard {
+  rows = 3;
+  columns = 3;
+  board = [];
 
-  for (let x = 0; x < boardSize; x++) {
-    const position = [];
-    for (let y = 0; y < boardSize; y++) {
-      let status = 0;
-      if (y === 1) {
-        status = 1;
-      }
-      position[y] = new Cell(x, y, status);
-      board[x] = position;
-    }
+  constructor(rows, columns) {
+    this.rows = rows;
+    this.columns = columns;
   }
 
-  return board;
-};
+  createBoard() {
+    const board = [];
+    for (let x = 0; x < this.rows; x++) {
+      const position = [];
+      for (let y = 0; y < this.columns; y++) {
+        let status = false;
+        if (y === 1) {
+          status = true;
+        }
+        position[y] = new Cell(status, false);
+        board[x] = position;
+      }
+    }
 
-export default gameBoard;
+    this.board = board;
+    return this.board;
+  }
+}
+
+export default GameBoard;
