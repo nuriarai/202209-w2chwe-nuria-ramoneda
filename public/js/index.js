@@ -5,3 +5,4 @@ import loopGame from "./gameOfLife/checkLifes.js";
 const gray = new Cell(1, 2, 0);
 const initGame = loopGame();
 const newBoard = new GameBoard(3, 3);
+console.log(newBoard.playGame());

@@ -29,6 +29,13 @@ class GameBoard {
     return this.board;
   }
 
+  playGame() {
+    const intervalId = setInterval(this.initCicle, 1000);
+    setTimeout(() => {
+      clearInterval(intervalId);
+    }, 10000); // stop it after 10seconds
+  }
+
   printBoard() {
     const boardToPrint = [];
     for (let x = 0; x < this.rows; x++) {
@@ -43,10 +50,15 @@ class GameBoard {
         }
       }
     }
+
+    for (let x = 0; x < this.rows; x++) {
+      console.log(` ${boardToPrint[x].join(" ")}  ${x}\n`);
+    }
+
     return boardToPrint;
   }
 
-  loopOfLife() {
+  loopTheLife() {
     for (let x = 0; x < this.rows; x++) {
       for (let y = 0; y < this.columns; y++) {
         const currentCell = this.board[x][y];
@@ -68,7 +80,12 @@ class GameBoard {
         currentCell.nextStatus = false;
       }
     }
-    console.log(this.board);
+    // console.log(this.board);
+  }
+
+  initCicle() {
+    this.printBoard();
+    this.loopTheLife();
   }
 }
 
