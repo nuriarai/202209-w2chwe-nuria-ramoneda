@@ -19,6 +19,6 @@ module.exports = {
       { exceptAfterSingleLine: true },
     ],
     "no-restricted-syntax": "off",
-    "no-unused-vars": "on",
+    "no-unused-vars": "error",
   },
 };
