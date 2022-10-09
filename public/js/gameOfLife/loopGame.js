@@ -19,7 +19,7 @@ const neighboursCheck = (xx, yy, status) => {
       const diagonalRightTop = neighboursBoard[xx - 1][yy + 1];
     }
 
-    console.log("a la dret i a baix en diagonal");
+    /*     console.log("a la dret i a baix en diagonal");
     console.log(neighboursBoard[xx + 1][yy + 1]);
 
     console.log("a l'esquerra i a baix en diagonal");
@@ -31,10 +31,10 @@ const neighboursCheck = (xx, yy, status) => {
     console.log(neighboursBoard[xx][yy + 1]);
     console.log("a baix");
     console.log(neighboursBoard[xx + 1][yy]);
-    /*     console.log("a l'esquerra i a baix en diagonal");
-    console.log(neighboursBoard[xx - 1][yy - 1]); */
+        console.log("a l'esquerra i a baix en diagonal");
+    console.log(neighboursBoard[xx - 1][yy - 1]); 
     console.log("costat esquerra");
-    console.log(neighboursBoard[xx][yy - 1]);
+    console.log(neighboursBoard[xx][yy - 1]); */
   }
   return 1;
 };
