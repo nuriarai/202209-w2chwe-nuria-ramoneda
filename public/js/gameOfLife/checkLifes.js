@@ -1,5 +1,3 @@
-const boardSize = 3;
-
 const checkLifes = (currentXX, currentYY, currentStatus, board, rows, cols) => {
   if (currentXX !== undefined) {
     const xx = currentXX;
