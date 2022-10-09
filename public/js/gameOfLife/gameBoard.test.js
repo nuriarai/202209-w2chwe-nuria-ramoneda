@@ -1,5 +1,5 @@
 import Cell from "./Cell.js";
-import GameBoard from "./gameBoard.js";
+import GameBoard from "./BoardGame.js";
 
 describe("Given the class gameBoard que genera el board", () => {
   describe("When it recieves 3 and 3 ", () => {
